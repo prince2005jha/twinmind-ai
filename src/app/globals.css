@@ -1,0 +1,249 @@
+/* 🌐 Base */
+:root {
+  --bg: #f3f5f8;
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --surface-subtle: #eef2f6;
+  --border: #d9e0e8;
+  --border-strong: #c7d1dc;
+  --text: #172230;
+  --text-muted: #5b6776;
+  --text-soft: #7b8794;
+  --accent: #0f5bd8;
+  --accent-soft: #eaf2ff;
+  --success: #127a5b;
+  --warning: #b16a00;
+  --danger: #c83d32;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-md: 0 12px 32px rgba(17, 24, 39, 0.06);
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* 🔷 Layout */
+.shell {
+  min-height: 100vh;
+}
+
+.dashboard {
+  width: min(1200px, calc(100% - 40px));
+  margin: auto;
+  padding: 28px 0;
+}
+
+/* 🔷 Header */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand-mark {
+  background: linear-gradient(135deg, #0f5bd8, #4d8dff);
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.topbar-status {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--success);
+  border-radius: 50%;
+}
+
+/* 🔷 Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.hero-panel,
+.summary-panel,
+.suggestions-card,
+.notes-panel,
+.chat-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-panel {
+  padding: 28px;
+}
+
+/* 🔥 Workspace */
+.workspace {
+  display: grid;
+  grid-template-columns: 1.4fr 1.2fr 1fr;
+  gap: 20px;
+}
+
+/* 🔥 Suggestions */
+.suggestions-card {
+  padding: 22px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--surface-muted);
+  font-size: 12px;
+}
+
+.status-badge.loading {
+  background: #fff7e8;
+  color: var(--warning);
+}
+
+.status-badge.error {
+  background: #fff0ef;
+  color: var(--danger);
+}
+
+/* 📝 Transcript */
+.transcript-input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+}
+
+/* 💡 Suggestions */
+.suggestions-grid {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.suggestion-item {
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-muted);
+  transition: 0.2s;
+}
+
+.suggestion-item:hover {
+  background: var(--accent-soft);
+}
+
+/* 🔘 Buttons */
+button {
+  border: none;
+  background: var(--accent);
+  color: white;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #0b4bb5;
+}
+
+/* 🔘 Actions */
+.panel-action {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* 💬 Chat */
+.chat-panel {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-box {
+  height: 260px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding-right: 5px;
+}
+
+.user-msg {
+  text-align: right;
+  background: var(--accent);
+  color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.bot-msg {
+  background: var(--surface-muted);
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+/* 📄 Notes */
+.notes-panel {
+  padding: 20px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 1000px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
