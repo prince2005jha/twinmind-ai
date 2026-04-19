@@ -76,6 +76,7 @@ The goal is to assist **decision-making during meetings**, not just generate gen
 ---
 
 ## 🏗️ Architecture
+
 Frontend (React / Next.js)
 ↓
 API Routes (/api/suggestions, /api/chat)
@@ -85,3 +86,38 @@ Groq LLM API
 Processed Response
 ↓
 UI (Suggestions + Chat + Export)
+
+
+---
+
+## 🧠 Prompt Engineering Strategy
+
+### Suggestions API
+- Returns exactly 3 concise suggestions
+- No formatting noise (no numbering, no markdown)
+- Focus: actionable business insights
+
+### Chat API
+- Uses:
+  - User message
+  - Full transcript context
+- Goal: expand suggestions into deeper reasoning
+
+---
+
+## ⚡ Performance & UX Decisions
+
+- **Debounce (500ms):** avoids excessive API calls  
+- **Batch updates (~30s):** prevents spam, improves relevance  
+- **Loading states:** clear feedback during AI calls  
+- **Error handling:** graceful fallback messages  
+
+---
+
+## 🔐 Environment Variables
+
+Create `.env.local`:
+
+```env
+GROQ_API_KEY=your_api_key_here
+
