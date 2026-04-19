@@ -154,14 +154,16 @@ Processed Response
 ↓
 UI (Suggestions + Chat + Export)
 
+
 ⚡ Performance & UX Decisions
 Debounce (500ms): avoids excessive API calls
 Batch updates (~30s): reduces noise
 Loading states: clear feedback
 Error handling: graceful UI
 
-🔐 Environment Variables
 
+
+🔐 Environment Variables
 Create .env.local:
 GROQ_API_KEY=your_api_key_here
 
