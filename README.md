@@ -121,3 +121,19 @@ Create `.env.local`:
 ```env
 GROQ_API_KEY=your_api_key_here
 
+🛠️ Local Setup
+git clone https://github.com/prince2005jha/twinmind-ai.git
+cd twinmind-ai
+
+npm install
+npm run dev
+
+Open:
+http://localhost:3000
+
+
+
+📬 Contact
+
+Open to Full Stack / AI roles 🚀
+Feel free to connect or give feedback!
