@@ -165,18 +165,20 @@ Error handling: graceful UI
 
 🔐 Environment Variables
 Create .env.local:
+
 GROQ_API_KEY=your_api_key_here
 
 🛠️ Local Setup
+
 git clone https://github.com/prince2005jha/twinmind-ai.git
 cd twinmind-ai
 
 npm install
 npm run dev
 
-Open:http://localhost:3000
+Open:
+http://localhost:3000
 
 📬 Author
-
 Prince Jha
 Open to Full Stack / AI roles 🚀
