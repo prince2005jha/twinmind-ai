@@ -76,3 +76,12 @@ The goal is to assist **decision-making during meetings**, not just generate gen
 ---
 
 ## 🏗️ Architecture
+Frontend (React / Next.js)
+↓
+API Routes (/api/suggestions, /api/chat)
+↓
+Groq LLM API
+↓
+Processed Response
+↓
+UI (Suggestions + Chat + Export)
