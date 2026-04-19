@@ -144,35 +144,15 @@ Goal:
 ---
 
 ## 🏗️ Architecture
-
-```mermaid
-flowchart TD
-
-A[User Input (Speech/Text)] --> B[Transcript State]
-
-B --> C[SuggestionsPanel]
-B --> D[ChatPanel]
-
-C --> E[/api/suggestions]
-D --> F[/api/chat]
-
-E --> G[Groq LLM]
-F --> G
-
-G --> E
-G --> F
-
-E --> H[Suggestion Batches]
-F --> I[Chat Messages]
-
-H --> C
-I --> D
-
-H --> J[Export System]
-I --> J
-B --> J
-
-J --> K[TXT / PDF Output]
+Frontend (React / Next.js)
+↓
+API Routes (/api/suggestions, /api/chat)
+↓
+Groq LLM API
+↓
+Processed Response
+↓
+UI (Suggestions + Chat + Export)
 
 ⚡ Performance & UX Decisions
 Debounce (500ms): avoids excessive API calls
@@ -198,6 +178,3 @@ Open:http://localhost:3000
 
 Prince Jha
 Open to Full Stack / AI roles 🚀
-     
-
-Example:
